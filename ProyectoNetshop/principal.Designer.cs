@@ -30,7 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(principal));
             panelIzquierdo = new Panel();
-            panelContenedor = new Panel();
             btnSalir = new FontAwesome.Sharp.IconButton();
             btnReportes = new FontAwesome.Sharp.IconButton();
             btnProductos = new FontAwesome.Sharp.IconButton();
@@ -39,9 +38,9 @@
             btnBackup = new FontAwesome.Sharp.IconButton();
             btnUsuarios = new FontAwesome.Sharp.IconButton();
             panelLogo = new Panel();
+            panelContenedor = new Panel();
             panelSuperior = new Panel();
             panelIzquierdo.SuspendLayout();
-            panelLogo.SuspendLayout();
             SuspendLayout();
             // 
             // panelIzquierdo
@@ -60,13 +59,6 @@
             panelIzquierdo.Name = "panelIzquierdo";
             panelIzquierdo.Size = new Size(200, 681);
             panelIzquierdo.TabIndex = 0;
-            // 
-            // panelContenedor
-            // 
-            panelContenedor.Location = new Point(200, 100);
-            panelContenedor.Name = "panelContenedor";
-            panelContenedor.Size = new Size(963, 515);
-            panelContenedor.TabIndex = 2;
             // 
             // btnSalir
             // 
@@ -110,6 +102,7 @@
             btnReportes.Text = "Reportes";
             btnReportes.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnReportes.UseVisualStyleBackColor = true;
+            btnReportes.Click += btnReportes_Click;
             // 
             // btnProductos
             // 
@@ -173,6 +166,7 @@
             btnVentas.Text = "Ventas";
             btnVentas.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnVentas.UseVisualStyleBackColor = true;
+            btnVentas.Click += btnVentas_Click_1;
             // 
             // btnBackup
             // 
@@ -215,18 +209,26 @@
             btnUsuarios.Text = "Usuarios";
             btnUsuarios.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnUsuarios.UseVisualStyleBackColor = true;
+            btnUsuarios.Click += btnUsuarios_Click;
             // 
             // panelLogo
             // 
             panelLogo.BackColor = Color.SlateGray;
             panelLogo.BackgroundImage = (Image)resources.GetObject("panelLogo.BackgroundImage");
             panelLogo.BackgroundImageLayout = ImageLayout.Stretch;
-            panelLogo.Controls.Add(panelContenedor);
             panelLogo.Dock = DockStyle.Top;
             panelLogo.Location = new Point(0, 0);
             panelLogo.Name = "panelLogo";
             panelLogo.Size = new Size(200, 100);
             panelLogo.TabIndex = 0;
+            // 
+            // panelContenedor
+            // 
+            panelContenedor.Dock = DockStyle.Bottom;
+            panelContenedor.Location = new Point(200, 118);
+            panelContenedor.Name = "panelContenedor";
+            panelContenedor.Size = new Size(1064, 563);
+            panelContenedor.TabIndex = 2;
             // 
             // panelSuperior
             // 
@@ -243,13 +245,13 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.SlateGray;
             ClientSize = new Size(1264, 681);
+            Controls.Add(panelContenedor);
             Controls.Add(panelSuperior);
             Controls.Add(panelIzquierdo);
             Name = "principal";
             Text = "Netshop";
             Load += principal_Load;
             panelIzquierdo.ResumeLayout(false);
-            panelLogo.ResumeLayout(false);
             ResumeLayout(false);
         }
 

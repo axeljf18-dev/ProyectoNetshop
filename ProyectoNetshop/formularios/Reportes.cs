@@ -16,5 +16,14 @@ namespace ProyectoNetshop.formularios
         {
             InitializeComponent();
         }
+
+        private void Reportes_Load(object sender, EventArgs e)
+        {
+            fechaDesde.Format = DateTimePickerFormat.Custom;
+            fechaDesde.CustomFormat = "dd/MM/yyyy";
+
+            fechaHasta.Format = DateTimePickerFormat.Custom;
+            fechaHasta.CustomFormat = "dd/MM/yyyy";
+        }
     }
 }
